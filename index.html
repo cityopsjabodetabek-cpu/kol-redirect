@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const kol = params.get("kol") || "UNKNOWN";
+
+    // 🔥 GANTI URL APPS SCRIPT KAMU
+    const trackingUrl = "https://script.google.com/macros/s/AKfycbwBmZ1DT1cD7Me8kLTxYtbjQp0-vV90zmaOldk_Q8EgeM7heMwQQjN7KhVYpXxCvF5P8w/exec?kol=" + kol;
+
+    // kirim tracking (tanpa nunggu)
+    fetch(trackingUrl).catch(() => {});
+
+    // redirect ke Play Store
+    const redirectUrl = "https://play.google.com/store/apps/details?id=com.shopee.foody.driver.id&referrer=" + kol;
+
+    window.location.href = redirectUrl;
+  </script>
+</head>
+<body>
+  Redirecting...
+</body>
+</html>
