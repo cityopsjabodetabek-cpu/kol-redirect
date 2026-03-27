@@ -5,18 +5,22 @@
   <script>
     const params = new URLSearchParams(window.location.search);
     const kol = params.get("kol") || "UNKNOWN";
-  
+
+    // 🔥 URL APPS SCRIPT
     const trackingUrl = "https://script.google.com/macros/s/AKfycbwBmZ1DT1cD7Me8kLTxYtbjQp0-vV90zmaOldk_Q8EgeM7heMwQQjN7KhVYpXxCvF5P8w/exec?kol=" + kol;
-  
-    // 🔥 FIX: kirim data tanpa dibatalkan saat redirect
+
+    // ✅ FIX: tracking tidak hilang
     navigator.sendBeacon(trackingUrl);
-  
+
+    // redirect ke Play Store
     const redirectUrl = "https://play.google.com/store/apps/details?id=com.shopee.foody.driver.id&referrer=" + kol;
-  
-    window.location.href = redirectUrl;
+
+    setTimeout(() => {
+      window.location.href = redirectUrl;
+    }, 200);
   </script>
 </head>
 <body>
-  Redirecting...
+Redirecting...
 </body>
 </html>
